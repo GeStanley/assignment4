@@ -5,6 +5,7 @@ using namespace std;
 
 class Shape
 {
+public:
   //**** constructors ****//
   Shape( const string & );
 
@@ -21,7 +22,7 @@ class Shape
   const long computePerimeter() const;
 
 private:
-  long idNumber;
+  int idNumber;
   string name;
   string description;
 
