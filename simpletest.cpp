@@ -8,7 +8,7 @@ using namespace std;
 
 int main()
 {
-  Rectangle shape1(10L,15L, "A simple rectangle");
+  Rectangle shape1(10L,15L);
   cout << shape1.getDescription() << endl;
   cout << shape1.getHeight() << endl;
   cout << shape1.getWidth() << endl;
