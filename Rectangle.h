@@ -1,15 +1,26 @@
 #ifndef RECTANGLE_H_
 #define RECTANGLE_H_
 
+#include "Shape.h"
+
+using namespace std;
+
 class Rectangle : public Shape
 {
 public:
 
-  Rectangle( int, int, string)
+  Rectangle( const long &, const long &, const string &);
+
+  //**** getters and setters ****//
+  const long getWidth() const;
+  void setWidth( const long & );
+  const long getHeight() const;
+  void setHeight( const long & );
+
 
 private:
-  int width;
-  int height;
+  long width;
+  long height;
 };
 
 #endif
