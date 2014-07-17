@@ -7,13 +7,15 @@ class Shape
 {
 public:
   //**** constructors ****//
-  Shape( const string & );
+  Shape( const string &, const string & );
+
+  const string toString() const;
 
   //**** getters and setters ****//
-  //const long getIdNumber() const;
-  //void setIdNumber( const long & );
-  //const string getName() const;
-  //void setName( const string & );
+  const int getIdNumber() const;
+  void setIdNumber( const int & );
+  const string getName() const;
+  void setName( const string & );
   const string getDescription() const;
   void setDescription( const string & );
 
@@ -22,8 +24,9 @@ public:
   //const long computePerimeter() const;
 
 private:
-  //int idNumber;
-  //string name;
+  static int numberOfShapes;
+  int idNumber;
+  string name;
   string description;
 
 };

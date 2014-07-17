@@ -7,7 +7,7 @@ using namespace std;
 Rectangle::Rectangle( const long & width,
                       const long & height,
                       const string & desc )
-                      : Shape( desc )
+                      : Shape( desc , "Rectangle")
 {
   setWidth(width);
   setHeight(height);

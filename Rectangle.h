@@ -9,7 +9,8 @@ class Rectangle : public Shape
 {
 public:
 
-  Rectangle( const long &, const long &, const string & d="Generic Rectangle");
+  Rectangle( const long &, const long &,
+            const string & ="Generic Rectangle");
 
   //**** getters and setters ****//
   const long getWidth() const;
