@@ -1,5 +1,6 @@
 #include <string>
 #include <typeinfo>
+#include <iostream>
 #include "Shape.h"
 
 using namespace std;
@@ -12,6 +13,8 @@ Shape::Shape( const string & description,
   setDescription(description);
   setName(name);
   setIdNumber(++numberOfShapes);
+  
+  cout << "Shape is calling test function : " << testFunction() << endl;
 }
 
 const string Shape::toString() const
@@ -68,3 +71,10 @@ void Shape::setDescription( const string & d)
 {
   description = d;
 }
+
+const string Shape::testFunction()
+{
+  return "base";
+}
+
+
