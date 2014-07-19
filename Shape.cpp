@@ -23,9 +23,11 @@ const string Shape::toString() const
   result+="Type of this:  ";
   result+=typeid(this).name();
   result+="\n";
+  
   result+="Type of *this: ";
   result+=typeid(*this).name();
   result+="\n";
+
   result+="Generic name:  " + getName() + "\n";
   result+="Description:   " + getDescription() + "\n";
   result+="id:            " + to_string(getIdNumber()) + "\n";
