@@ -14,9 +14,16 @@ public:
   const long getHeight() const;
   void setHeight( const long & );
 
+  const long getVerticalExtent() const override;
+  const long getHorizontalExtent() const override;
+  const long getGeometricArea() const override;
+  const long getScreenArea() const override;
+  const long getGeometricPerimeter() const override;
+  const long getScreenPerimeter() const override;
 
 private:
   long height;
+  long base;
 
 };
 

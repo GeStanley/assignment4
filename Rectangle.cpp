@@ -6,18 +6,13 @@
 
 using namespace std;
 
-Rectangle::Rectangle( const long & width,
-                      const long & height,
+Rectangle::Rectangle( const long & height,
+                      const long & width,
                       const string & desc )
                       : Shape( desc , "Rectangle")
 {
   setWidth(width);
   setHeight(height);
-
-  cout << "Rectangle is calling test function : " << testFunction() << endl;
-  cout << "Rectangle calls base class Shape test function : " << Shape::testFunction() << endl;
-  cout << "this" << typeid(this).name() << endl;
-  cout << "*this" << typeid(*this).name() << endl;
 }
 
 const long Rectangle::getWidth() const
@@ -40,23 +35,32 @@ void Rectangle::setHeight( const long & h)
   height = h;
 }
 
-const long Rectangle::getVerticalExtent()
+const long Rectangle::getVerticalExtent() const
 {
-  return 999L;
+  return height;
 }
 
-const long Rectangle::getHorizontalExtent()
-{}
-const long Rectangle::getGeometricArea()
-{}
-const long Rectangle::getScreenArea()
-{}
-const long Rectangle::getGeometricPerimeter()
-{}
-const long Rectangle::getScreenPerimeter()
-{}
-
-const string Rectangle::testFunction()
+const long Rectangle::getHorizontalExtent() const
 {
-  return "derive";
+  return width;
+}
+
+const long Rectangle::getGeometricArea() const
+{
+  return height * width;
+}
+
+const long Rectangle::getScreenArea() const
+{
+  return height * width;
+}
+
+const long Rectangle::getGeometricPerimeter() const
+{
+  return 2*(height+width);
+}
+
+const long Rectangle::getScreenPerimeter() const
+{
+  return 2*(height+width)-4;
 }

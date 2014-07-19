@@ -13,8 +13,6 @@ Shape::Shape( const string & description,
   setDescription(description);
   setName(name);
   setIdNumber(++numberOfShapes);
-  
-  cout << "Shape is calling test function : " << testFunction() << endl;
 }
 
 const string Shape::toString() const
@@ -26,7 +24,7 @@ const string Shape::toString() const
   result+="Type of this:  ";
   result+=typeid(this).name();
   result+="\n";
-  
+
   result+="Type of *this: ";
   result+=typeid(*this).name();
   result+="\n";
@@ -34,12 +32,12 @@ const string Shape::toString() const
   result+="Generic name:  " + getName() + "\n";
   result+="Description:   " + getDescription() + "\n";
   result+="id:            " + to_string(getIdNumber()) + "\n";
-  result+="H extent:      \n";
-  result+="V extent:      \n";
-  result+="Scr area:      \n";
-  result+="Geo area:      \n";
-  result+="Scr perimeter: \n";
-  result+="Geo perimiter: \n";
+  result+="H extent:      " + to_string(getHorizontalExtent()) + "\n";
+  result+="V extent:      " + to_string(getVerticalExtent()) + "\n";
+  result+="Scr area:      " + to_string(getScreenArea()) + "\n";
+  result+="Geo area:      " + to_string(getGeometricArea()) + "\n";
+  result+="Scr perimeter: " + to_string(getScreenPerimeter()) + "\n";
+  result+="Geo perimiter: " + to_string(getGeometricPerimeter()) + "\n";
 
   return result;
 }
@@ -73,10 +71,3 @@ void Shape::setDescription( const string & d)
 {
   description = d;
 }
-
-const string Shape::testFunction()
-{
-  return "base";
-}
-
-

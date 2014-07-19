@@ -18,17 +18,16 @@ public:
   void setName( const string & );
   const string getDescription() const;
   void setDescription( const string & );
-  
+
 
   //**** virtual functions ****//
-  virtual const long getVerticalExtent()=0;
-  virtual const long getHorizontalExtent()=0;
-  virtual const long getGeometricArea()=0;
-  virtual const long getScreenArea()=0;
-  virtual const long getGeometricPerimeter()=0;
-  virtual const long getScreenPerimeter()=0;
-  
-  virtual const string testFunction();
+  virtual const long getVerticalExtent() const =0;
+  virtual const long getHorizontalExtent() const =0;
+  virtual const long getGeometricArea() const =0;
+  virtual const long getScreenArea() const =0;
+  virtual const long getGeometricPerimeter() const =0;
+  virtual const long getScreenPerimeter() const =0;
+
   //void scale( const int & );
   //const long computeArea() const;
   //const long computePerimeter() const;

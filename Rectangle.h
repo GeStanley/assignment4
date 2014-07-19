@@ -18,14 +18,13 @@ public:
   const long getHeight() const;
   void setHeight( const long & );
 
-  const long getVerticalExtent() override;
-  const long getHorizontalExtent() override;
-  const long getGeometricArea() override;
-  const long getScreenArea() override;
-  const long getGeometricPerimeter() override;
-  const long getScreenPerimeter() override;
+  const long getVerticalExtent() const override;
+  const long getHorizontalExtent() const override;
+  const long getGeometricArea() const override;
+  const long getScreenArea() const override;
+  const long getGeometricPerimeter() const override;
+  const long getScreenPerimeter() const override;
 
-  const string testFunction() override;
 private:
   long width;
   long height;

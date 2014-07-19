@@ -1,4 +1,5 @@
 #include <string>
+#include <math.h>
 #include "RightIsosceles.h"
 
 
@@ -19,4 +20,35 @@ const long RightIsosceles::getHeight() const
 void RightIsosceles::setHeight( const long & h)
 {
   height = h;
+  base = height;
+}
+
+const long RightIsosceles::getVerticalExtent() const
+{
+  return height;
+}
+
+const long RightIsosceles::getHorizontalExtent() const
+{
+  return height;
+}
+
+const long RightIsosceles::getGeometricArea() const
+{
+  return (height * height)/2;
+}
+
+const long RightIsosceles::getScreenArea() const
+{
+  return height*(height + 1)/2;
+}
+
+const long RightIsosceles::getGeometricPerimeter() const
+{
+  return (2+sqrt(2)) * height;
+}
+
+const long RightIsosceles::getScreenPerimeter() const
+{
+  return 3*(height-1);
 }

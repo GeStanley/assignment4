@@ -14,6 +14,12 @@ public:
   const long getDiagonal() const;
   void setDiagonal( const long & );
 
+  const long getVerticalExtent() const override;
+  const long getHorizontalExtent() const override;
+  const long getGeometricArea() const override;
+  const long getScreenArea() const override;
+  const long getGeometricPerimeter() const override;
+  const long getScreenPerimeter() const override;
 
 private:
   long diagonal;
