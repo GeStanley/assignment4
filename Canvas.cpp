@@ -55,7 +55,7 @@ void Canvas::put(const int & i, const int & j, const char & ch )
   grid[i][j] = ch;
 }
 
-virtual const char get(const int & i, const int & j ) const
+const char Canvas::get(const int & i, const int & j ) const
 {
   return grid[i][j];
 }

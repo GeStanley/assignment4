@@ -6,10 +6,12 @@ using namespace std;
 
 class Canvas
 {
+protected:
+  vector<vector<char>> grid;
 public:
   //**** constructors ****//
   Canvas (const int & , const int &);
-
+  
   const string toString() const;
 
   //**** getters and setters ****//
@@ -27,7 +29,7 @@ public:
 private:
   int height;
   int width;
-  vector<vector<char>> grid;
+  
 };
 
 #endif
