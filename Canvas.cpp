@@ -66,3 +66,6 @@ void Canvas::clear(const char & ch)
     for(int j=0; j<grid[i].size(); j++)
       grid[i][j] = ch;
 }
+
+void Canvas::decorate()
+{}

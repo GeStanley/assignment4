@@ -24,7 +24,7 @@ public:
   virtual void clear(const char & = ' ');
   virtual void put(const int & , const int & , const char & = '*');
   virtual const char get(const int & , const int & ) const;
-  virtual void decorate() = 0;
+  virtual void decorate();
 
 private:
   int height;

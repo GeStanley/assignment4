@@ -16,7 +16,7 @@ public:
   void clear(const char & = ' ') override;
   void put(const int & , const int & , const char & = '*') override;
   const char get(const int & , const int & ) const override;
-  //void decorate() override;
+  void decorate() override;
 
 };
 
