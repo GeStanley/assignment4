@@ -16,9 +16,9 @@ public:
 
   const long getVerticalExtent() const override;
   const long getHorizontalExtent() const override;
-  const long getGeometricArea() const override;
+  const double getGeometricArea() const override;
   const long getScreenArea() const override;
-  const long getGeometricPerimeter() const override;
+  const double getGeometricPerimeter() const override;
   const long getScreenPerimeter() const override;
 
 private:

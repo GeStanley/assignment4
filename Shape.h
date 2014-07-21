@@ -23,9 +23,9 @@ public:
   //**** virtual functions ****//
   virtual const long getVerticalExtent() const =0;
   virtual const long getHorizontalExtent() const =0;
-  virtual const long getGeometricArea() const =0;
+  virtual const double getGeometricArea() const =0;
   virtual const long getScreenArea() const =0;
-  virtual const long getGeometricPerimeter() const =0;
+  virtual const double getGeometricPerimeter() const =0;
   virtual const long getScreenPerimeter() const =0;
 
   //void scale( const int & );

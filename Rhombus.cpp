@@ -34,7 +34,7 @@ const long Rhombus::getHorizontalExtent() const
 {
   return diagonal;
 }
-const long Rhombus::getGeometricArea() const
+const double Rhombus::getGeometricArea() const
 {
   return (diagonal * diagonal)/2;
 }
@@ -43,7 +43,7 @@ const long Rhombus::getScreenArea() const
   long n = diagonal/2;
   return 2*n*(n+1)+1;
 }
-const long Rhombus::getGeometricPerimeter() const
+const double Rhombus::getGeometricPerimeter() const
 {
   return (2 * sqrt(2)) * diagonal;
 }

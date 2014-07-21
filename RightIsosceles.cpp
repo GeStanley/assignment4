@@ -33,7 +33,7 @@ const long RightIsosceles::getHorizontalExtent() const
   return height;
 }
 
-const long RightIsosceles::getGeometricArea() const
+const double RightIsosceles::getGeometricArea() const
 {
   return (height * height)/2;
 }
@@ -43,7 +43,7 @@ const long RightIsosceles::getScreenArea() const
   return height*(height + 1)/2;
 }
 
-const long RightIsosceles::getGeometricPerimeter() const
+const double RightIsosceles::getGeometricPerimeter() const
 {
   return (2+sqrt(2)) * height;
 }

@@ -45,7 +45,7 @@ const long Rectangle::getHorizontalExtent() const
   return width;
 }
 
-const long Rectangle::getGeometricArea() const
+const double Rectangle::getGeometricArea() const
 {
   return height * width;
 }
@@ -55,7 +55,7 @@ const long Rectangle::getScreenArea() const
   return height * width;
 }
 
-const long Rectangle::getGeometricPerimeter() const
+const double Rectangle::getGeometricPerimeter() const
 {
   return 2*(height+width);
 }
