@@ -6,7 +6,7 @@ using namespace std;
 #include <string>
 #include "Canvas.h"
 #include "BorderedCanvas.h"
-
+#include "FramedCanvas.h"
 
 int main()
 {
@@ -16,6 +16,15 @@ int main()
   
 
   BorderedCanvas bd(5,10);
-  bd.clear('-');
+  bd.clear('.');
   cout << bd.toString() << endl;
+
+  FramedCanvas fd(15,5);
+  fd.clear('.');
+  cout << fd.toString() << endl;
+
+  FramedCanvas fd1(15,10, "testing");
+  fd1.clear('.');
+  cout << fd1.toString() << endl;
+
 }

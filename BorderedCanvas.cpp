@@ -15,7 +15,10 @@ BorderedCanvas::BorderedCanvas( const int & height,
 
 void BorderedCanvas::clear(const char & ch)
 {
-  //Canvas::clear(ch);
+
+  for(int i=1; i<grid.size()-1; i++)
+    for(int j=1; j<grid[i].size()-1; j++)
+      grid[i][j] = ch;
 }
 
 void BorderedCanvas::put(const int & i, const int & j, const char & ch )
@@ -30,17 +33,24 @@ const char BorderedCanvas::get(const int & i, const int & j ) const
 
 void BorderedCanvas::decorate()
 {
-  cout << "this is bc's decoreate function..." << endl;
 
-  for(int i=0; i<Canvas::getw(); i++)
+  for(int i=0; i<Canvas::geth(); i++)
   {
-    for(int j=0; j>Canvas::geth(); j++)
+    for(int j=0; j<Canvas::getw(); j++)
     {
-      if(i==0 || i==Canvas::getw()-1)
-        grid[i][j] = '_';
 
-      if(j==0 || j==Canvas::geth()-1)
+      if(i==0 || i==Canvas::geth()-1)
+        grid[i][j] = '-';
+
+      if(j==0 || j==Canvas::getw()-1)
         grid[i][j] = '|';
+
+      if((i==0 && j==0) ||
+          (i==0 && j==Canvas::getw()-1) ||
+          (i==Canvas::geth()-1 && j==Canvas::getw()-1) ||
+          (i==Canvas::geth()-1 && j==0))
+        grid[i][j] = '+';
+
     }
   }
 }
