@@ -27,6 +27,7 @@ public:
   virtual const long getScreenArea() const =0;
   virtual const double getGeometricPerimeter() const =0;
   virtual const long getScreenPerimeter() const =0;
+  virtual void draw(int c, int r, Canvas & canvas, char ch = '*') const = 0;
 
   //void scale( const int & );
   //const long computeArea() const;

@@ -24,6 +24,7 @@ public:
   const long getScreenArea() const override;
   const double getGeometricPerimeter() const override;
   const long getScreenPerimeter() const override;
+  void draw(int c, int r, Canvas & canvas, char ch = '*') const override;
 
 private:
   long width;
