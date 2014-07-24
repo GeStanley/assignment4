@@ -1,6 +1,7 @@
 #include <string>
 #include <iostream>
 #include <typeinfo>
+#include "Canvas.h"
 #include "Rectangle.h"
 
 
@@ -64,3 +65,6 @@ const long Rectangle::getScreenPerimeter() const
 {
   return 2*(height+width)-4;
 }
+
+void Rectangle::draw(int c, int r, Canvas & canvas, char ch) const
+{}

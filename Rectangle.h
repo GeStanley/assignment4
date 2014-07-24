@@ -1,6 +1,7 @@
 #ifndef RECTANGLE_H_
 #define RECTANGLE_H_
 
+#include "Canvas.h"
 #include "Shape.h"
 
 using namespace std;

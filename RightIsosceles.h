@@ -1,6 +1,7 @@
 #ifndef RIGHTISOSCELES_H_
 #define RIGHTISOSCELES_H_
 
+#include "Canvas.h"
 #include "Shape.h"
 
 class RightIsosceles : public Shape

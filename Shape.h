@@ -1,6 +1,7 @@
 #ifndef SHAPE_H_
 #define SHAPE_H_
 
+#include "Canvas.h"
 using namespace std;
 
 class Shape

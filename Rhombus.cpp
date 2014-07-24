@@ -1,5 +1,6 @@
 #include <string>
 #include <math.h>
+#include "Canvas.h"
 #include "Rhombus.h"
 
 
@@ -51,3 +52,6 @@ const long Rhombus::getScreenPerimeter() const
 {
   return 2*(diagonal-1);
 }
+
+void Rhombus::draw(int c, int r, Canvas & canvas, char ch) const
+{}

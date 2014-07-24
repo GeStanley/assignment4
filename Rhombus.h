@@ -1,6 +1,7 @@
 #ifndef RHOMBUS_H_
 #define RHOMBUS_H_
 
+#include "Canvas.h"
 #include "Shape.h"
 
 class Rhombus : public Shape

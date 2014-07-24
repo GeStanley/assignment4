@@ -1,5 +1,6 @@
 #include <string>
 #include <math.h>
+#include "Canvas.h"
 #include "RightIsosceles.h"
 
 
@@ -52,3 +53,6 @@ const long RightIsosceles::getScreenPerimeter() const
 {
   return 3*(height-1);
 }
+
+void RightIsosceles::draw(int c, int r, Canvas & canvas, char ch) const
+{}

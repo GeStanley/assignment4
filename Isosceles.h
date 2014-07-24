@@ -1,6 +1,7 @@
 #ifndef ISOSCELES_H_
 #define ISOSCELES_H_
 
+#include "Canvas.h"
 #include "Shape.h"
 
 class Isosceles : public Shape
