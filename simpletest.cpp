@@ -9,6 +9,7 @@ using namespace std;
 #include "RightIsosceles.h"
 #include "Isosceles.h"
 #include "Canvas.h"
+#include "FramedCanvas.h"
 
 int main()
 {
@@ -40,7 +41,7 @@ int main()
   cout << shape7.toString() << endl;
 
 
-  RightIsosceles shape8(22, "second right isosceles");
+  Isosceles shape8(3, "second right isosceles");
   cout << shape8.toString() << endl;
 
   Canvas c1(20,20);
@@ -50,4 +51,12 @@ int main()
 
   shape3.draw(5,5,c1,'o');
   cout << c1.toString() << endl;
+
+  FramedCanvas f1(15,15);
+  f1.clear('.');
+  shape7.draw(3,3,f1,'v');
+  cout << f1.toString() << endl;
+
+  shape8.draw(7,5, f1,'o');
+  cout << f1.toString() << endl;
 }

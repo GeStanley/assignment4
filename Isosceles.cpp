@@ -54,5 +54,17 @@ const long Isosceles::getScreenPerimeter() const
   return 4*(height-1);
 }
 
-void Isosceles::draw(int c, int r, Canvas & canvas, char) const
-{}
+void Isosceles::draw(int c, int r, Canvas & canvas, char ch) const
+{
+  int starsInRow = 1;
+  int offset = getHeight()/2-1;
+
+  for(int i=0; i<getHeight(); i++)
+  {
+    for(int j=0; j<starsInRow; j++)
+        canvas.put(i+r, j+c+offset, ch);
+
+    starsInRow += 2;
+    offset -= 1;
+  }
+}

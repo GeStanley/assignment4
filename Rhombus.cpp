@@ -56,7 +56,6 @@ const long Rhombus::getScreenPerimeter() const
 
 void Rhombus::draw(int c, int r, Canvas & canvas, char ch) const
 {
-  cout << "entering rhombus draw..." << endl;
 
   //this part draws the top half of the diamond
   //as well as the center line

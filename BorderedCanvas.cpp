@@ -8,7 +8,7 @@ using namespace std;
 
 BorderedCanvas::BorderedCanvas( const int & height,
                       const int & width)
-                      : Canvas( height + 2, width + 2 )
+                      : Canvas( width + 2, height + 2 )
 {
   decorate();
 }

@@ -9,7 +9,7 @@ using namespace std;
 FramedCanvas::FramedCanvas( const int & height,
                       const int & width,
                       const string & title)
-                      : Canvas( height + 4, width + 2 )
+                      : Canvas( width + 2, height + 4 )
 {
   this->title = title;
   decorate();
@@ -37,7 +37,7 @@ void FramedCanvas::decorate()
 {
 
   int index=0;
-  
+
   for(char c : title)
   {
     grid[1].at(1+index) = c;
@@ -62,5 +62,5 @@ void FramedCanvas::decorate()
         grid[i][j] = '+';
 
     }
-  } 
+  }
 }

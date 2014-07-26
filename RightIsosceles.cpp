@@ -55,4 +55,14 @@ const long RightIsosceles::getScreenPerimeter() const
 }
 
 void RightIsosceles::draw(int c, int r, Canvas & canvas, char ch) const
-{}
+{
+  int starsInRow = 1;
+
+  for(int i=0; i<getHeight(); i++)
+  {
+    for(int j=0; j<starsInRow; j++)
+      canvas.put(i+r, j+c, ch);
+
+    starsInRow++;
+  }
+}
