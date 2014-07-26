@@ -52,7 +52,7 @@ void Canvas::setw( const int & w )
 
 void Canvas::put(const int & i, const int & j, const char & ch )
 {
-  grid[i][j] = ch;
+  grid[i+1][j+1] = ch;
 }
 
 const char Canvas::get(const int & i, const int & j ) const

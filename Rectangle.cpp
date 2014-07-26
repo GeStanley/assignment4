@@ -67,4 +67,8 @@ const long Rectangle::getScreenPerimeter() const
 }
 
 void Rectangle::draw(int c, int r, Canvas & canvas, char ch) const
-{}
+{
+  for(int row=0; row<getHeight(); row++)
+    for(int col=0; col<getWidth(); col++)
+      canvas.put(row+r, col+c, ch);
+}

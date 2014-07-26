@@ -8,6 +8,7 @@ using namespace std;
 #include "Rhombus.h"
 #include "RightIsosceles.h"
 #include "Isosceles.h"
+#include "Canvas.h"
 
 int main()
 {
@@ -42,5 +43,11 @@ int main()
   RightIsosceles shape8(22, "second right isosceles");
   cout << shape8.toString() << endl;
 
+  Canvas c1(20,20);
+  c1.clear('.');
+  shape1.draw(2,2,c1);
+  cout << c1.toString() << endl;
 
+  shape3.draw(5,5,c1,'o');
+  cout << c1.toString() << endl;
 }
