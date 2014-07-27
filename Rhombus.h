@@ -8,23 +8,24 @@ class Rhombus : public Shape
 {
 public:
 
-  Rhombus(const long &,
+  Rhombus(const int &,
             const string & ="Generic Rhomnus");
 
   //**** getters and setters ****//
-  const long getDiagonal() const;
-  void setDiagonal( const long & );
+  const int getDiagonal() const;
+  void setDiagonal( const int & );
 
-  const long getVerticalExtent() const override;
-  const long getHorizontalExtent() const override;
+  const int getVerticalExtent() const override;
+  const int getHorizontalExtent() const override;
   const double getGeometricArea() const override;
-  const long getScreenArea() const override;
+  const int getScreenArea() const override;
   const double getGeometricPerimeter() const override;
-  const long getScreenPerimeter() const override;
+  const int getScreenPerimeter() const override;
   void draw(int c, int r, Canvas & canvas, char ch = '*') const override;
+  void scale( const int & ) override;
 
 private:
-  long diagonal;
+  int diagonal;
 
 };
 

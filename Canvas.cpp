@@ -6,8 +6,8 @@ using namespace std;
 
 Canvas::Canvas(const int & width, const int & height)
 {
-  seth(height);
   setw(width);
+  seth(height);
 
   grid.resize( height ,vector<char>( width , ' '));
 }
@@ -52,12 +52,16 @@ void Canvas::setw( const int & w )
 
 void Canvas::put(const int & i, const int & j, const char & ch )
 {
-  grid[i+1][j+1] = ch;
+  if(i>=0 && j>=0 && i<geth() && j<getw())
+    grid[i][j] = ch;
 }
 
 const char Canvas::get(const int & i, const int & j ) const
 {
-  return grid[i][j];
+  if(i>=0 && j>=0 && i<geth() && j<getw())
+    return grid[i][j];
+  else
+    return 0;
 }
 
 void Canvas::clear(const char & ch)
@@ -69,4 +73,14 @@ void Canvas::clear(const char & ch)
 }
 
 void Canvas::decorate()
-{}
+{
+  //Doesn't need an implementation.
+  //Nothing to decorate.
+}
+
+//********************* NON-MEMBER OPERATORS *********************//
+
+ostream & operator << ( ostream &output, const Canvas &canvas )
+{
+   return output << canvas.toString();
+}

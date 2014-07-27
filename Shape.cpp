@@ -1,4 +1,5 @@
 #include <string>
+#include <sstream>
 #include <typeinfo>
 #include <iostream>
 #include "Shape.h"
@@ -17,29 +18,35 @@ Shape::Shape( const string & description,
 
 const string Shape::toString() const
 {
-  string result;
+  stringstream result;
 
-  result+="Shape Information\n";
-  result+="-----------------\n";
-  result+="Type of this:  ";
-  result+=typeid(this).name();
-  result+="\n";
+  result.precision(2);
+  result << fixed;
 
-  result+="Type of *this: ";
-  result+=typeid(*this).name();
-  result+="\n";
+  result << "Shape Information\n";
+  result << "-----------------\n";
+  result << "Type of this:  ";
+  result << typeid(this).name();
+  result << "\n";
 
-  result+="Generic name:  " + getName() + "\n";
-  result+="Description:   " + getDescription() + "\n";
-  result+="id:            " + to_string(getIdNumber()) + "\n";
-  result+="H extent:      " + to_string(getHorizontalExtent()) + "\n";
-  result+="V extent:      " + to_string(getVerticalExtent()) + "\n";
-  result+="Scr area:      " + to_string(getScreenArea()) + "\n";
-  result+="Geo area:      " + to_string(getGeometricArea()) + "\n";
-  result+="Scr perimeter: " + to_string(getScreenPerimeter()) + "\n";
-  result+="Geo perimiter: " + to_string(getGeometricPerimeter()) + "\n";
+  result << "Type of *this: ";
+  result << typeid(*this).name();
+  result << "\n";
 
-  return result;
+  result << "Generic name:  " << getName() << "\n";
+  result << "Description:   " << getDescription() << "\n";
+  result << "id:            " << to_string(getIdNumber()) << "\n";
+  result << "H extent:      " << to_string(getHorizontalExtent()) << "\n";
+  result << "V extent:      " << to_string(getVerticalExtent()) << "\n";
+  result << "Scr area:      " << to_string(getScreenArea()) << "\n";
+  result << "Geo area:      " << getGeometricArea() << "\n";
+  result << "Scr perimeter: " << to_string(getScreenPerimeter()) << "\n";
+  result << "Geo perimiter: " << getGeometricPerimeter() << "\n";
+
+  result << "\n";
+  result << "\n";
+
+  return result.str();
 }
 
 const int Shape::getIdNumber() const
@@ -70,4 +77,11 @@ const string Shape::getDescription() const
 void Shape::setDescription( const string & d)
 {
   description = d;
+}
+
+//********************* NON-MEMBER OPERATORS *********************//
+
+ostream & operator << ( ostream &output, const Shape &shape )
+{
+  return output << shape.toString();
 }

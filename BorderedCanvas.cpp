@@ -6,8 +6,8 @@
 
 using namespace std;
 
-BorderedCanvas::BorderedCanvas( const int & height,
-                      const int & width)
+BorderedCanvas::BorderedCanvas( const int & width,
+                      const int & height )
                       : Canvas( width + 2, height + 2 )
 {
   decorate();
@@ -23,12 +23,16 @@ void BorderedCanvas::clear(const char & ch)
 
 void BorderedCanvas::put(const int & i, const int & j, const char & ch )
 {
-  grid[i+1][j+1] = ch;
+  if(i>=0 && j>=0 && i<Canvas::geth()-2 && j<Canvas::getw()-2)
+    grid[i+1][j+1] = ch;
 }
 
 const char BorderedCanvas::get(const int & i, const int & j ) const
 {
-  return grid[i+1][j+1];
+  if(i>=0 && j>=0 && i<Canvas::geth()-2 && j<Canvas::getw()-2)
+    return grid[i+1][j+1];
+  else
+    return 0;
 }
 
 void BorderedCanvas::decorate()

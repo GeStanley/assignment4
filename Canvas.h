@@ -11,7 +11,7 @@ protected:
 public:
   //**** constructors ****//
   Canvas (const int & , const int &);
-  
+
   const string toString() const;
 
   //**** getters and setters ****//
@@ -29,7 +29,10 @@ public:
 private:
   int height;
   int width;
-  
-};
 
+};
+  //*********
+  //NON-MEMBER OPERATORS
+  //extraction operator <<
+  ostream & operator << ( ostream &, const Canvas & );
 #endif

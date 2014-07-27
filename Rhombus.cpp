@@ -7,7 +7,7 @@
 
 using namespace std;
 
-Rhombus::Rhombus( const long & diagonal,
+Rhombus::Rhombus( const int & diagonal,
                       const string & desc )
                       : Shape( desc , "Rhombus")
 {
@@ -17,39 +17,39 @@ Rhombus::Rhombus( const long & diagonal,
     setDiagonal(diagonal+1);
 }
 
-const long Rhombus::getDiagonal() const
+const int Rhombus::getDiagonal() const
 {
   return diagonal;
 }
 
-void Rhombus::setDiagonal( const long & d)
+void Rhombus::setDiagonal( const int & d)
 {
   diagonal = d;
 }
 
-const long Rhombus::getVerticalExtent() const
+const int Rhombus::getVerticalExtent() const
 {
   return diagonal;
 }
 
-const long Rhombus::getHorizontalExtent() const
+const int Rhombus::getHorizontalExtent() const
 {
   return diagonal;
 }
 const double Rhombus::getGeometricArea() const
 {
-  return (diagonal * diagonal)/2;
+  return (diagonal * diagonal)/2.0;
 }
-const long Rhombus::getScreenArea() const
+const int Rhombus::getScreenArea() const
 {
-  long n = diagonal/2;
+  int n = diagonal/2;
   return 2*n*(n+1)+1;
 }
 const double Rhombus::getGeometricPerimeter() const
 {
-  return (2 * sqrt(2)) * diagonal;
+  return (2.0 * sqrt(2.0)) * diagonal;
 }
-const long Rhombus::getScreenPerimeter() const
+const int Rhombus::getScreenPerimeter() const
 {
   return 2*(diagonal-1);
 }
@@ -83,4 +83,12 @@ void Rhombus::draw(int c, int r, Canvas & canvas, char ch) const
     starsInRow -= 2;
     offset += 1;
   }
+}
+
+void Rhombus::scale( const int & n)
+{
+  //check to ensure the Rhombus can be scaled
+  if(getDiagonal()+n*2>=1)
+    setDiagonal(getDiagonal()+n*2);
+  //if not do nothing.
 }

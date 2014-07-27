@@ -6,50 +6,50 @@
 
 using namespace std;
 
-RightIsosceles::RightIsosceles( const long & height,
+RightIsosceles::RightIsosceles( const int & height,
                       const string & desc )
                       : Shape( desc , "Right Isosceles")
 {
   setHeight(height);
 }
 
-const long RightIsosceles::getHeight() const
+const int RightIsosceles::getHeight() const
 {
   return height;
 }
 
-void RightIsosceles::setHeight( const long & h)
+void RightIsosceles::setHeight( const int & h)
 {
   height = h;
   base = height;
 }
 
-const long RightIsosceles::getVerticalExtent() const
+const int RightIsosceles::getVerticalExtent() const
 {
   return height;
 }
 
-const long RightIsosceles::getHorizontalExtent() const
+const int RightIsosceles::getHorizontalExtent() const
 {
   return height;
 }
 
 const double RightIsosceles::getGeometricArea() const
 {
-  return (height * height)/2;
+  return (height * height)/2.0;
 }
 
-const long RightIsosceles::getScreenArea() const
+const int RightIsosceles::getScreenArea() const
 {
   return height*(height + 1)/2;
 }
 
 const double RightIsosceles::getGeometricPerimeter() const
 {
-  return (2+sqrt(2)) * height;
+  return (2.0+sqrt(2.0)) * height;
 }
 
-const long RightIsosceles::getScreenPerimeter() const
+const int RightIsosceles::getScreenPerimeter() const
 {
   return 3*(height-1);
 }
@@ -65,4 +65,12 @@ void RightIsosceles::draw(int c, int r, Canvas & canvas, char ch) const
 
     starsInRow++;
   }
+}
+
+void RightIsosceles::scale( const int & n)
+{
+  //test to ensure the Isosceles can be scaled.
+  if(getHeight()+n>=1)
+    setHeight(getHeight()+1);
+  //if not, do nothing.
 }

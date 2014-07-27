@@ -11,14 +11,16 @@ using namespace std;
 #include "FramedCanvas.h"
 
 // function prototypes
-void drawHouse();         
+void drawHouse();
 void testShapeAndCamvas();
+void testShape();
 
 
 int main()
 {
    testShapeAndCamvas();
    drawHouse(); // draw house
+   testShape();
 
    return 0;
 }
@@ -30,6 +32,8 @@ void drawHouse()
    FramedCanvas canvas(45, 50, "A Geometric House: Front View");      // a canvas to draw on
    Rectangle chimney(2, 14, "Chimeny on the roof"); // A vertical 14 x 2 chimney
    chimney.draw(4, 7, canvas, 'H');                 // Draw chimney on canvas
+
+   cout << canvas << endl;
 
    Isosceles roof(21, "House roof");     // A triangular roof of height 21
    roof.draw(1, 1, canvas, '/');              // Draw roof
@@ -55,11 +59,11 @@ void drawHouse()
    doorsMiddle.draw(29, 28, canvas, '=');       // draw the middle vertical rectangle
 
    // windows above front door
-   Rectangle doorTop = Rectangle(15, 2, "Top door window");  //  A 4c by 2r rectangle 
+   Rectangle doorTop = Rectangle(15, 2, "Top door window");  //  A 4c by 2r rectangle
    doorTop.draw(22, 24, canvas, 'W');              // Draw top door window
 
 
-   Rectangle doggyDoor = Rectangle(4, 2, "A rectangle  doggy door");  //  A 4c by 2r rectangle 
+   Rectangle doggyDoor = Rectangle(4, 2, "A rectangle  doggy door");  //  A 4c by 2r rectangle
    doggyDoor.draw(4, 41, canvas, 'D');              // Draw doggy door
 
    Rhombus window(7, "Diamond shape window on front wall"); // A rhombus window on front wall
@@ -132,7 +136,18 @@ void testShapeAndCamvas()
 
 }
 
+void testShape()
+{
+  Rectangle shape1(10,15);
+  cout << shape1 << endl;
 
+  Rhombus ace(16, "Ace of diamond");
+  cout << ace.toString() << endl;
 
+  Isosceles iso1(10);
+  Shape * iso1ptr = &iso1;
+  cout << iso1ptr->toString() << endl;
 
-
+  RightIsosceles iso2(10);
+  cout << iso2.toString() << endl;
+}

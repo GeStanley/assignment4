@@ -10,26 +10,27 @@ class Rectangle : public Shape
 {
 public:
 
-  Rectangle( const long &, const long &,
+  Rectangle( const int &, const int &,
             const string & ="Generic Rectangle");
 
   //**** getters and setters ****//
-  const long getWidth() const;
-  void setWidth( const long & );
-  const long getHeight() const;
-  void setHeight( const long & );
+  const int getWidth() const;
+  void setWidth( const int & );
+  const int getHeight() const;
+  void setHeight( const int & );
 
-  const long getVerticalExtent() const override;
-  const long getHorizontalExtent() const override;
+  const int getVerticalExtent() const override;
+  const int getHorizontalExtent() const override;
   const double getGeometricArea() const override;
-  const long getScreenArea() const override;
+  const int getScreenArea() const override;
   const double getGeometricPerimeter() const override;
-  const long getScreenPerimeter() const override;
+  const int getScreenPerimeter() const override;
   void draw(int c, int r, Canvas & canvas, char ch = '*') const override;
+  void scale( const int & ) override;
 
 private:
-  long width;
-  long height;
+  int width;
+  int height;
 };
 
 #endif
