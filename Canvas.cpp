@@ -8,7 +8,7 @@ Canvas::Canvas(const int & width, const int & height)
 {
   setw(width);
   seth(height);
-
+  //create the grid of the object with blank spaces inserted.
   grid.resize( height ,vector<char>( width , ' '));
 }
 
@@ -51,21 +51,21 @@ void Canvas::setw( const int & w )
 }
 
 void Canvas::put(const int & i, const int & j, const char & ch )
-{
+{//first test to ensure the coordinates are within the range
   if(i>=0 && j>=0 && i<geth() && j<getw())
     grid[i][j] = ch;
 }
 
 const char Canvas::get(const int & i, const int & j ) const
-{
+{//first test to ensure the coordinates are within the range
   if(i>=0 && j>=0 && i<geth() && j<getw())
     return grid[i][j];
-  else
+  else//if not, return nullptr.
     return 0;
 }
 
 void Canvas::clear(const char & ch)
-{
+{//iterate through each cell of the grid
   for(int i=0; i<grid.size(); i++)
     for(int j=0; j<grid[i].size(); j++)
       grid[i][j] = ch;

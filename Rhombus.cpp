@@ -59,16 +59,16 @@ void Rhombus::draw(int c, int r, Canvas & canvas, char ch) const
 
   //this part draws the top half of the diamond
   //as well as the center line
-  int starsInRow = 1;
-  int offset = getDiagonal()/2-1;
+  int starsInRow = 1; //first row contains 1 star
+  int offset = getDiagonal()/2-1; //offset from column
 
   for(int i=0; i<getDiagonal()/2+1; i++)
   {
     for(int j=0; j<starsInRow; j++)
         canvas.put(i+r, j+c+offset, ch);
 
-    starsInRow += 2;
-    offset -= 1;
+    starsInRow += 2; //each row has 2 more stars
+    offset -= 1; //the offset decreases by 1
   }
 
   //this part draws the bottom half of the diamond
@@ -80,8 +80,8 @@ void Rhombus::draw(int c, int r, Canvas & canvas, char ch) const
     for(int j=0; j<starsInRow; j++)
         canvas.put(i+r, j+c+offset, ch);
 
-    starsInRow -= 2;
-    offset += 1;
+    starsInRow -= 2; //each row has 2 fewer stars
+    offset += 1; //each row the offset increases by one
   }
 }
 

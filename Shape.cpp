@@ -20,7 +20,7 @@ const string Shape::toString() const
 {
   stringstream result;
 
-  result.precision(2);
+  result.precision(2);//set how many decimals are displayed by doubles.
   result << fixed;
 
   result << "Shape Information\n";

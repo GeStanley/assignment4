@@ -56,16 +56,16 @@ const int Isosceles::getScreenPerimeter() const
 
 void Isosceles::draw(int c, int r, Canvas & canvas, char ch) const
 {
-  int starsInRow = 1;
-  int offset = getHeight()-1;
+  int starsInRow = 1; //we start by inserting 1 star in the top row
+  int offset = getHeight()-1; //this is the offset from the starting column
 
-  for(int i=0; i<getHeight(); i++)
+  for(int i=0; i<getHeight(); i++) //iterate through each row
   {
-    for(int j=0; j<starsInRow; j++)
+    for(int j=0; j<starsInRow; j++)//iterate through each column
         canvas.put(i+r, j+c+offset, ch);
 
-    starsInRow += 2;
-    offset -= 1;
+    starsInRow += 2;//starts increase by 2 every row
+    offset -= 1;//offset decreases by 1 every row
   }
 }
 

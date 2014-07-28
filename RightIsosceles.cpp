@@ -56,14 +56,14 @@ const int RightIsosceles::getScreenPerimeter() const
 
 void RightIsosceles::draw(int c, int r, Canvas & canvas, char ch) const
 {
-  int starsInRow = 1;
+  int starsInRow = 1; //the first row has 1 star
 
-  for(int i=0; i<getHeight(); i++)
+  for(int i=0; i<getHeight(); i++)//iterate through the rows
   {
-    for(int j=0; j<starsInRow; j++)
+    for(int j=0; j<starsInRow; j++)//iterate through the columns
       canvas.put(i+r, j+c, ch);
 
-    starsInRow++;
+    starsInRow++; //each row has 1 more star then the previous
   }
 }
 
